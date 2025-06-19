@@ -2,7 +2,7 @@
 
 ## @purinton/openai [![npm version](https://img.shields.io/npm/v/@purinton/openai.svg)](https://www.npmjs.com/package/@purinton/openai)[![license](https://img.shields.io/github/license/purinton/openai.svg)](LICENSE)[![build status](https://github.com/purinton/openai/actions/workflows/nodejs.yml/badge.svg)](https://github.com/purinton/openai/actions)
 
-> A openai for Node.js (Insert Brief Description)
+> A simple OpenAI API client wrapper for Node.js, with ESM and TypeScript support.
 
 ---
 
@@ -11,13 +11,16 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [ESM Example](#esm-example)
-  - [CommonJS Example](#commonjs-example)
 - [API](#api)
 - [TypeScript](#typescript)
 - [License](#license)
 
 ## Features
+
+- Minimal wrapper for the official OpenAI Node.js SDK
+- ESM-first and TypeScript-ready
+- Simple API key management (env or parameter)
+- Example usage and tests included
 
 ## Installation
 
@@ -27,38 +30,36 @@ npm install @purinton/openai
 
 ## Usage
 
-### ESM Example
-
 ```js
-// Example for ESM (module JS) usage
+import { createOpenAI } from '@purinton/openai';
 
-```
-
-### CommonJS Example
-
-```js
-// Example for CommonJS usage
-
+(async () => {
+  // Optionally pass your API key, or set OPENAI_API_KEY in your environment
+  const openai = await createOpenAI();
+  // Example: list models
+  // const models = await openai.models.list();
+  // console.log(models);
+})();
 ```
 
 ## API
 
-### method1 signature
+### `createOpenAI(apiKey?: string): Promise<OpenAI>`
 
-description
+Creates and returns a new OpenAI client instance. If `apiKey` is not provided, it will use `process.env.OPENAI_API_KEY`.
 
-### method2 signature
-
-description
-
-... etc ...
+- `apiKey` (optional): Your OpenAI API key. If omitted, the function will use the `OPENAI_API_KEY` environment variable.
+- Returns: A Promise that resolves to an OpenAI client instance.
+- Throws: If no API key is provided.
 
 ## TypeScript
 
 Type definitions are included:
 
 ```ts
-
+import { createOpenAI } from '@purinton/openai';
+import type OpenAI from 'openai';
+const openai: OpenAI = await createOpenAI();
 ```
 
 ## Support
