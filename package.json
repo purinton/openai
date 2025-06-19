@@ -47,5 +47,8 @@
             "**/?(*.)+(spec|test).mjs",
             "**/?(*.)+(spec|test).cjs"
         ]
+    },
+    "dependencies": {
+        "openai": "^5.5.1"
     }
 }
