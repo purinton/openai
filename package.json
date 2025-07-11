@@ -1,7 +1,7 @@
 {
     "name": "@purinton/openai",
     "type": "module",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A simple OpenAI API client wrapper for Node.js, with ESM and TypeScript support.",
     "module": "index.mjs",
     "types": "index.d.ts",
@@ -41,7 +41,7 @@
     },
     "homepage": "https://github.com/purinton/openai#readme",
     "devDependencies": {
-        "jest": "^30.0.1"
+        "jest": "^30.0.4"
     },
     "jest": {
         "testEnvironment": "node",
@@ -52,6 +52,6 @@
         ]
     },
     "dependencies": {
-        "openai": "^5.5.1"
+        "openai": "^5.9.0"
     }
 }
